@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TopBody</string>
+    <string name="sign_in">Вход</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="restore">Восстановить пароль</string>
+    <string name="sign_in_sub">Введите почту и пароль  для авторизации</string>
+    <string name="sign_up_sub">Введите email и придумайте пароль для авторизации в будущем</string>
+    <string name="restore_sub">Введите почту вашего аккаунта</string>
+    <string name="call_list">Список вызовов</string>
+    <string name="accept_call">Приняли вызов:</string>
+    <string name="more_about_call">Подробнее о вызове</string>
+    <string name="complete_exercise">Выполнить задание онлайн</string>
+    <string name="success_call">Задание выполнено</string>
+    <string name="call">Вызов</string>
+    <string name="about_call">О вызовах:</string>
+    <string name="service_rules_title">Правила сервиса</string>
+    <string name="rule_1">Все видео обрабатывает искусственный интеллект, никто не смотрит за вами.</string>
+    <string name="rule_2">Видео с камеры обрабатывается локально на телефоне и никуда не отправляются.</string>
+    <string name="bottom_title">Узнай что такое\nвызовы и как\nони работают?</string>
+    <string name="look">Посмотреть</string>
+    <string name="time">Время</string>
+    <string name="period">Периодичность</string>
+</resources>
