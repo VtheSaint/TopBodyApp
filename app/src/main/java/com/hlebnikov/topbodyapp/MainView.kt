@@ -66,10 +66,10 @@ fun MainView(
             }
             composable("CallList") {
                 val viewModel: CallViewModel = hiltViewModel()
-                CallScreen(viewModel = viewModel)
+                CallScreen(viewModel = viewModel, navController = navController)
             }
             composable("CallInfo/${id}") {
-                CallInfoScreen(id = id)
+                CallInfoScreen(id = id, navController)
             }
             composable("Profile") {
                 Text(text = "Заглушка")

@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
+import androidx.navigation.NavController
 import com.hlebnikov.topbodyapp.ui.theme.AppTheme
 
 @Composable
@@ -33,18 +34,24 @@ fun TripleColorsButton(
     shape: Shape,
     width: Dp,
     height: Dp,
-    onClick1: () -> Unit,
-    onClick2: () -> Unit,
+//    onClick1: () -> Unit,
+//    onClick2: () -> Unit,
     text_c1: String,
     text_c2: String,
     text_c3: String,
     isLogged: Boolean,
     isDone: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    id: Number
 ) {
     if (!isLogged)  {
         Button(
-            onClick = onClick1,
+            onClick = {
+                navController.navigate("Login")
+//                println(onClick1)
+//                onClick1()
+            },
             shape = shape,
             modifier = Modifier
                 .width(width)
@@ -59,7 +66,7 @@ fun TripleColorsButton(
     else {
         if (!isDone) {
             Button(
-                onClick = onClick2,
+                onClick = {navController.navigate("CallInfo/${id}")},
                 shape = shape,
                 modifier = Modifier
                     .width(width)
@@ -74,7 +81,7 @@ fun TripleColorsButton(
 
         else {
             Button(
-                onClick = onClick2,
+                onClick = {navController.navigate("CallInfo/${id}")},
                 shape = shape,
                 modifier = Modifier
                     .width(width)

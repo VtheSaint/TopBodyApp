@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.hlebnikov.topbodyapp.R
 import com.hlebnikov.topbodyapp.fakeData.fake_call_list
 import com.hlebnikov.topbodyapp.ui.components.BottomCard
@@ -37,7 +38,8 @@ import com.hlebnikov.topbodyapp.utils.Call
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun CallScreen(
-    viewModel: CallViewModel
+    viewModel: CallViewModel,
+    navController: NavController
 ) {
     // Initializing the state
     val state = viewModel.viewState.observeAsState(CallViewState())
@@ -57,10 +59,9 @@ fun CallScreen(
     Scaffold(
         topBar = { AppBar() },
     ) {
-        // TODO Edit to simple column
         Column (
             modifier = Modifier
-                .padding(start = 30.dp, top = 40.dp, bottom = 60.dp, end = 30.dp)
+                .padding(start = 30.dp, top = 40.dp, bottom = 70.dp, end = 30.dp)
                 .fillMaxSize()
         ) {
             LazyColumn( ) {
@@ -68,13 +69,15 @@ fun CallScreen(
                 if ( call_list.results is List<Call>) {
                     items(items = call_list.results){
                         Spacer(modifier = Modifier.height(8.dp))
+                        // TODO Fix navigation
                         CallCard(
                             title = it.name,
-                            isLogged = true,
-                            isDone = true,
+                            isLogged = false,
+                            isDone = false,
                             call_id = it.id,
                             avatars = it.avatar,
-                            background = it.image_list
+                            background = it.image_list,
+                            navController = navController
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                     }

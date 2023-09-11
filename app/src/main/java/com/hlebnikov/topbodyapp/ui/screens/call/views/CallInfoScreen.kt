@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.hlebnikov.topbodyapp.R
 import com.hlebnikov.topbodyapp.fakeData.fakeCallInfo
 import com.hlebnikov.topbodyapp.ui.components.AboutCall
@@ -35,8 +36,11 @@ import com.hlebnikov.topbodyapp.ui.theme.AppTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CallInfoScreen(
-    id: Number
+    id: Number,
+    navController: NavController
+
 ) {
+    // TODO Add Fetching Data
     val state = fakeCallInfo
     Scaffold  (
         topBar = {
@@ -106,13 +110,13 @@ fun CallInfoScreen(
                     shape = RoundedCornerShape(20.dp),
                     width = 335.dp,
                     height = 65.dp,
-                    onClick1 = { /*TODO*/ },
-                    onClick2 = { /*TODO*/ },
                     text_c1 = stringResource(id = R.string.accept_call),
                     text_c2 = stringResource(id = R.string.accept_call),
                     text_c3 = stringResource(id = R.string.accept_call),
                     isLogged = true,
-                    isDone = true
+                    isDone = true,
+                    navController = navController,
+                    id = id
                 )
                 /*
                 Block with video content !
